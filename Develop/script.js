@@ -11,17 +11,28 @@
 // when the password is generated, it should either be displayed in an alert or written on the page.
 
 
+
+function generatePassword() {
+  var passwordConfirm = window.confirm("would you like to create a password?");
+  
+  // if yes (true)
+  if(passwordConfirm) {
+    var passLength = window.prompt("how long would you like your password to be? Please choose a number between 8 and 128.");
+
+  }
+}
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
+generateBtn.addEventListener("click", function() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
-}
+})
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
