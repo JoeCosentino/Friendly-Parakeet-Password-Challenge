@@ -43,45 +43,31 @@ function generatePassword() {
     return generatePassword();
   }
 
-  for(i = 0, i < passLength; i++) {
+  // uppercase in password
+  var upper = window.confirm("click OK to include uppercase characters in your password");
 
-    // uppercase in password
-    var upper = window.confirm("click OK to include uppercase characters in your password");
+  // lowercase in password
+  var lower = window.confirm("click OK to include lowercase characters in your password");
 
-    //what to do if upper is true
-    if(upper) {
-      var includeUpper = upperCaseTrue[Math.floor(Math.random() * upperCaseTrue.length)];
-      console.log(includeUpper);
-    } 
+  // numbers in password
+  var number = window.confirm("click OK to include numbers in your password");
 
-    // lowercase in password
-    var lower = window.confirm("click OK to include lowercase characters in your password");
+  // special in password
+  var special = window.confirm("click OK to include special characters in your password");
 
-    if (lower) {
-      var includeLower = lowerCaseTrue[Math.floor(Math.random() * lowerCaseTrue.length)];
-      console.log(includeLower);
+  // how to get multiple results, in the amount of passLength?
+
+  for(var i = 0; i < passLength; i++) {
+
+    if(upper === true && lower === true && number === true && special === true) {
+      var generatePassword = function() {
+        usableChar.length(passLength);
+      } 
     }
 
-    // numbers in password
-    var number = window.confirm("click OK to include numbers in your password");
-
-    if(number) {
-      var includeNumbers = numbersTrue[Math.floor(Math.random() * numbersTrue.length)];
-      console.log(includeNumbers);
-    }
-
-    // special in password
-    var special = window.confirm("click OK to include special characters in your password");
-
-    if(special) {
-      var includeSpecial = specialCharTrue[Math.floor(Math.random() * specialCharTrue.length)];
-      console.log(includeSpecial);
-    }
-
-    // how to get multiple results, in the amount of passLength?
-
-
-
+      
+    
+    
     return password;
   }
 }
@@ -90,6 +76,25 @@ function generatePassword() {
   
   
   
+  // if(upper) {
+  //   var includeUpper = upperCaseTrue[Math.floor(Math.random() * upperCaseTrue.length)];
+  //   console.log(includeUpper);
+  // } 
+
+  // if (lower) {
+  //   var includeLower = lowerCaseTrue[Math.floor(Math.random() * lowerCaseTrue.length)];
+  //   console.log(includeLower);
+  // }
+
+  // if(number) {
+  //   var includeNumbers = numbersTrue[Math.floor(Math.random() * numbersTrue.length)];
+  //   console.log(includeNumbers);
+  // }
+
+  // if(special) {
+  //   var includeSpecial = specialCharTrue[Math.floor(Math.random() * specialCharTrue.length)];
+  //   console.log(includeSpecial);
+  // }
   
   
   
