@@ -14,6 +14,13 @@ var upperCaseTrue = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 var lowerCaseTrue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbersTrue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var specialCharTrue = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
+var usableChar = upperCaseTrue.concat(lowerCaseTrue, numbersTrue, specialCharTrue);
+console.log(usableChar);
+
+
+
+
+
 
 console.log(upperCaseTrue);
 console.log(lowerCaseTrue);
@@ -21,6 +28,7 @@ console.log(numbersTrue);
 console.log(specialCharTrue);
 
 function generatePassword() {
+
   // password length
   var passLength = parseInt(window.prompt("choose how long you would like your password to be. Must be between 8 and 128 characters."));
 
@@ -35,40 +43,112 @@ function generatePassword() {
     return generatePassword();
   }
 
-  // uppercase in password
-  var upper = window.confirm("click OK to include uppercase characters in your password");
+  for(i = 0, i < passLength; i++) {
 
-  //what to do if upper is true
-  if(upper) {
-    var includeUpper = upperCaseTrue[Math.floor(Math.random() * upperCaseTrue.length)];
-    console.log(includeUpper);
-  } 
+    // uppercase in password
+    var upper = window.confirm("click OK to include uppercase characters in your password");
 
-  // lowercase in password
-  var lower = window.confirm("click OK to include lowercase characters in your password");
+    //what to do if upper is true
+    if(upper) {
+      var includeUpper = upperCaseTrue[Math.floor(Math.random() * upperCaseTrue.length)];
+      console.log(includeUpper);
+    } 
 
-  if (lower) {
-    var includeLower = lowerCaseTrue[Math.floor(Math.random() * lowerCaseTrue.length)];
-    console.log(includeLower);
+    // lowercase in password
+    var lower = window.confirm("click OK to include lowercase characters in your password");
+
+    if (lower) {
+      var includeLower = lowerCaseTrue[Math.floor(Math.random() * lowerCaseTrue.length)];
+      console.log(includeLower);
+    }
+
+    // numbers in password
+    var number = window.confirm("click OK to include numbers in your password");
+
+    if(number) {
+      var includeNumbers = numbersTrue[Math.floor(Math.random() * numbersTrue.length)];
+      console.log(includeNumbers);
+    }
+
+    // special in password
+    var special = window.confirm("click OK to include special characters in your password");
+
+    if(special) {
+      var includeSpecial = specialCharTrue[Math.floor(Math.random() * specialCharTrue.length)];
+      console.log(includeSpecial);
+    }
+
+    // how to get multiple results, in the amount of passLength?
+
+
+
+    return password;
   }
-
-  // numbers in password
-  var number = window.confirm("click OK to include numbers in your password");
-
-  if(number) {
-    var includeNumbers = numbersTrue[Math.floor(Math.random() * numbersTrue.length)];
-    console.log(includeNumbers);
-  }
-
-  // special in password
-  var special = window.confirm("click OK to include special characters in your password");
-
-  if(special) {
-    var includeSpecial = specialCharTrue[Math.floor(Math.random() * specialCharTrue.lenth)];
-    console.log(includeSpecial);
-  }
-  return password;
 }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+//   // password length
+//   var passLength = parseInt(window.prompt("choose how long you would like your password to be. Must be between 8 and 128 characters."));
+
+//   //what happens when player types in answer for passlength?
+//   if(passLength <= 8 || passLength >= 128) {
+//     window.alert("You need to provid a valid answer. Please try again!");
+//     return generatePassword();
+//   }
+
+//   if(passLength === "" || passLength === null) {
+//     window.alert("You need to provid a valid answer. Please try again!");
+//     return generatePassword();
+//   }
+
+//   // uppercase in password
+//   var upper = window.confirm("click OK to include uppercase characters in your password");
+
+//   //what to do if upper is true
+//   if(upper) {
+//     var includeUpper = upperCaseTrue[Math.floor(Math.random() * upperCaseTrue.length)];
+//     console.log(includeUpper);
+//   } 
+
+//   // lowercase in password
+//   var lower = window.confirm("click OK to include lowercase characters in your password");
+
+//   if (lower) {
+//     var includeLower = lowerCaseTrue[Math.floor(Math.random() * lowerCaseTrue.length)];
+//     console.log(includeLower);
+//   }
+
+//   // numbers in password
+//   var number = window.confirm("click OK to include numbers in your password");
+
+//   if(number) {
+//     var includeNumbers = numbersTrue[Math.floor(Math.random() * numbersTrue.length)];
+//     console.log(includeNumbers);
+//   }
+
+//   // special in password
+//   var special = window.confirm("click OK to include special characters in your password");
+
+//   if(special) {
+//     var includeSpecial = specialCharTrue[Math.floor(Math.random() * specialCharTrue.length)];
+//     console.log(includeSpecial);
+//   }
+
+//   // how to get multiple results, in the amount of passLength?
+
+
+
+//   return password;
+// }
 
 
 
