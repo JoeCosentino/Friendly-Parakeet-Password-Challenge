@@ -12,7 +12,7 @@
 
 var upperCaseTrue = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerCaseTrue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var numbersTrue = parseInt(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]);
+var numbersTrue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var specialCharTrue = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
 console.log(upperCaseTrue);
@@ -40,18 +40,33 @@ function generatePassword() {
 
   //what to do if upper is true
   if(upper) {
-    upperCaseTrue[i];
-  }
+    var includeUpper = upperCaseTrue[Math.floor(Math.random() * upperCaseTrue.length)];
+    console.log(includeUpper);
+  } 
 
   // lowercase in password
   var lower = window.confirm("click OK to include lowercase characters in your password");
 
+  if (lower) {
+    var includeLower = lowerCaseTrue[Math.floor(Math.random() * lowerCaseTrue.length)];
+    console.log(includeLower);
+  }
+
   // numbers in password
   var number = window.confirm("click OK to include numbers in your password");
+
+  if(number) {
+    var includeNumbers = numbersTrue[Math.floor(Math.random() * numbersTrue.length)];
+    console.log(includeNumbers);
+  }
 
   // special in password
   var special = window.confirm("click OK to include special characters in your password");
 
+  if(special) {
+    var includeSpecial = specialCharTrue[Math.floor(Math.random() * specialCharTrue.lenth)];
+    console.log(includeSpecial);
+  }
   return password;
 }
 
@@ -71,13 +86,3 @@ generateBtn.addEventListener("click", function() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-// var passwordConfirm = window.confirm("would you like to create a password?");
-  
-//   // if yes (true)
-//   if(passwordConfirm) {
-//     var passLength = parseInt(window.prompt("how long would you like your password to be? Please choose a number between 8 and 128."));
-    
-//     if(passLength <= 128 || passLength >= 8) {
-//       var upper = winow.confirm("include uppercase characters in your password?");
