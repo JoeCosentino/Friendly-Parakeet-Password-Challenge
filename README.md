@@ -25,7 +25,7 @@ This is a README file for the Friendly Parakeet (Password Generator) Challenge, 
 
 ## Screenshot of Assignment
 
-![image](./assets/images/
+![image](./assets/images/Password-generator.PNG)
 
 ## Licensing
 
