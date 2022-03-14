@@ -31,6 +31,7 @@ function generatePassword() {
 
   // password length
   var passLength = parseInt(window.prompt("choose how long you would like your password to be. Must be between 8 and 128 characters."));
+  console.log(passLength);
 
   //what happens when player types in answer for passlength?
   if(passLength <= 8 || passLength >= 128) {
@@ -57,12 +58,12 @@ function generatePassword() {
 
   // how to get multiple results, in the amount of passLength?
 
+  var password = "";
   for(var i = 0; i < passLength; i++) {
 
     if(upper === true && lower === true && number === true && special === true) {
-      var generatePassword = function() {
-        usableChar.length(passLength);
-      } 
+      password += usableChar(Math.floor(Math.random() * passLength));
+      debugger;
     }
 
       

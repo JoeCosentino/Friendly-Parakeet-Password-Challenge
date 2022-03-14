@@ -3,14 +3,14 @@
 This is a README file for the Friendly Parakeet (Password Generator) Challenge, completed by Joe Cosentino
 ## Important Links
 
-* main repository link: 
-* active webpage link: 
+* main repository link: https://github.com/JoeCosentino/Friendly-Parakeet-Password-Challenge
+* active webpage link: https://joecosentino.github.io/Friendly-Parakeet-Password-Challenge/
 
 ## To Download
 
 * you can download these files to your local computer using either:
-    1. SSH: 
-    2. HTTPS: 
+    1. SSH: git@github.com:JoeCosentino/Friendly-Parakeet-Password-Challenge.git
+    2. HTTPS: https://github.com/JoeCosentino/Friendly-Parakeet-Password-Challenge.git
 
 ## Collaboraters
 
