@@ -15,23 +15,13 @@ var lowerCaseTrue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
 var numbersTrue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var specialCharTrue = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 var usableChar = [];
-console.log(usableChar);
-
-
-
-
-
-
-console.log(upperCaseTrue);
-console.log(lowerCaseTrue);
-console.log(numbersTrue);
-console.log(specialCharTrue);
 
 function generatePassword() {
 
+  usableChar = [];
+
   // password length
   var passLength = parseInt(window.prompt("choose how long you would like your password to be. Must be between 8 and 128 characters."));
-  console.log(passLength);
 
   if(passLength === "" || passLength === null) {
     window.alert("You need to provid a valid answer. Please try again!");
@@ -44,41 +34,30 @@ function generatePassword() {
     return generatePassword();
   }
 
-  // uppercase in password
+  // include uppercase in password
   var upper = window.confirm("click OK to include uppercase characters in your password");
-  // if(upper){
-  //   usableChar = usableChar.concat(upperCaseTrue);
-  // }
 
-  // lowercase in password
+  // include lowercase in password
   var lower = window.confirm("click OK to include lowercase characters in your password");
-  // if(lower){
-  //   usableChar = usableChar.concat(lowerCaseTrue);
-  // }
 
-  // numbers in password
+  // include numbers in password
   var number = window.confirm("click OK to include numbers in your password");
-  // if(number){
-  //   usableChar = usableChar.concat(numbersTrue);
-  // }
-
-  // special in password
+  
+  // incldue special characters in password
   var special = window.confirm("click OK to include special characters in your password");
-  // if(number){
-  //   usableChar = usableChar.concat(specialCharTrue);
-  // }
+  
 
-  // how to get multiple results, in the amount of passLength?
-
+  // once all responses are logged, go through all possibilities to determine password output
   var password = "";
   for(var i = 0; i < passLength; i++) {
 
-    // all possibilities
+    // all possible character types
     if(upper && lower && number && special) {
       usableChar = usableChar.concat(upperCaseTrue, lowerCaseTrue, numbersTrue, specialCharTrue);
       password += usableChar[Math.floor(Math.random() * usableChar.length)];
     }
-    // Three possibilites
+
+    // Three possible character types
     else if (upper && lower && number && special === false) {
       usableChar = usableChar.concat(upperCaseTrue, lowerCaseTrue, numbersTrue);
       password += usableChar[Math.floor(Math.random() * usableChar.length)];
@@ -96,7 +75,7 @@ function generatePassword() {
       password += usableChar[Math.floor(Math.random() * usableChar.length)];
     }
 
-    // two possibilities
+    // two possible character types
     else if(upper && lower && number === false && special === false) {
       usableChar = usableChar.concat(upperCaseTrue, lowerCaseTrue);
       password += usableChar[Math.floor(Math.random() * usableChar.length)];
@@ -122,7 +101,7 @@ function generatePassword() {
       password += usableChar[Math.floor(Math.random() * usableChar.length)];
     }
 
-    // one possibilities
+    // one possible character type
     else if(upper && lower === false && number === false && special === false) {
       usableChar = usableChar.concat(upperCaseTrue);
       password += usableChar[Math.floor(Math.random() * usableChar.length)];
