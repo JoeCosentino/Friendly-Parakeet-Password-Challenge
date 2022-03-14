@@ -62,9 +62,9 @@ function generatePassword() {
   for(var i = 0; i < passLength; i++) {
 
     if(upper === true && lower === true && number === true && special === true) {
-      password += usableChar(Math.floor(Math.random() * passLength));
-      debugger;
+      password += usableChar[Math.floor(Math.random() * usableChar)];
     }
+    debugger;
 
       
     
